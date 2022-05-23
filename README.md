@@ -14,3 +14,12 @@ To tackle the problem of large output spaces, the loss can be computed using usi
 The datasets can be downloaded from the [extreme classification repository](http://manikvarma.org/downloads/XC/XMLRepository.html). Put the downloaded dataset in the "datasets" folder.   
 The code only works with BoW features.  
 Make sure that the training and evaluation data are named "train.txt" and "test.txt", respectively, before running the code.
+
+## Training the model
+
+Run the following command for training the model:
+```bash
+python main.py --dataset <dataset>
+```
+
+For the hyperparameters, please see the arguments in main.py.
