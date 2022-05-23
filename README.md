@@ -11,6 +11,6 @@ To tackle the problem of large output spaces, the loss can be computed using usi
 
 ## Datasets
 
-The datasets can be downloaded from the [extreme classification repository](http://manikvarma.org/downloads/XC/XMLRepository.html).  
+The datasets can be downloaded from the [extreme classification repository](http://manikvarma.org/downloads/XC/XMLRepository.html). Put the downloaded dataset in the "datasets" folder.   
 The code only works with BoW features.  
 Make sure that the training and evaluation data are named "train.txt" and "test.txt", respectively, before running the code.
