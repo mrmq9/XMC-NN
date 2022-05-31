@@ -109,7 +109,7 @@ class DatasetUniformSampling(DatasetFull):
     def _get_uniform_labels(self, indices):
         num_total_labels = self.labels.shape[1]
         batch_size = len(indices)
-        all_labels = np.array(range(num_total_labels))
+        all_labels = np.arange(num_total_labels)
         lbl_one_hot = np.zeros((batch_size, self.num_neg))
         lbl_indices = np.zeros((batch_size, self.num_neg), dtype=int)
 
@@ -117,7 +117,7 @@ class DatasetUniformSampling(DatasetFull):
             pos_labels_sample = self.labels[sample_idx].indices
             possible_negs_ind = np.where(~np.in1d(all_labels, pos_labels_sample))[0]
             neg_labels_sample = np.random.choice(all_labels[possible_negs_ind],
-                                                 self.num_neg-len(pos_labels_sample))
+                                                 self.num_neg-len(pos_labels_sample), replace=False)
             lbl_indices[idx] = np.concatenate((pos_labels_sample, neg_labels_sample))
             lbl_one_hot[idx, :len(pos_labels_sample)] = 1.0
 
